@@ -2,6 +2,7 @@ let minutes, seconds, counterInterval = undefined;
 
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
+const loadingEl = document.getElementById('loading');
 
 resetCounter();
 
@@ -12,6 +13,9 @@ function updateCounterEl(){
 }
 
 function startCounter() {
+
+  loadingEl.classList.add('loading--active');
+
   if(counterInterval) return;
 
   counterInterval = setInterval(() => { 
@@ -28,13 +32,14 @@ function startCounter() {
       return;
     }
 
-    --seconds;
+    --seconds; 
     updateCounterEl();
 
   }, 1000)
 }
 
 function pauseCounter() {
+  loadingEl.classList.remove('loading--active')
   destroyInterval();
 }
 
@@ -44,6 +49,9 @@ function destroyInterval() {
 }
 
 function resetCounter(){
+
+  loadingEl.classList.remove('loading--active');
+
   destroyInterval();
   minutes = 25;
   seconds = 00;

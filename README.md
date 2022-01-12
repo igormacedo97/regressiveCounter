@@ -2,7 +2,7 @@
 
 # Regressive Counter / Pomodoro
 
-Um contador regressivo feito desenvovolvido com Javascript.
+Um contador regressivo desenvovolvido com Javascript e integrado com uma animação de "spin" contruída com CSS 3.
 
 ## 🛠️ Construído com
 
